@@ -14,6 +14,11 @@ Route::get('/', function () {
     return view('auth/login');
 })->middleware('guest');
 
+// Check apakah bootstrap sudah berjalan properly
+Route::get('/layouts-login', function () {
+    return view('layouts/login');
+});
+
 // Auth::routes();
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('login', 'Auth\\LoginController@showLoginForm')->name('login');
