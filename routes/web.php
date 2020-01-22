@@ -21,6 +21,9 @@ Route::get('/layouts-login', function () {
 Route::get('/layouts-register', function () {
     return view('layouts/register');
 });
+Route::get('/layouts-dashboard', function () {
+    return view('layouts/dashboard');
+});
 
 // Auth::routes();
 Route::get('home', 'HomeController@index')->name('home')->middleware('role:barberman|admin');
