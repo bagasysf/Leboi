@@ -25,7 +25,7 @@ Route::get('/layouts-register', function () {
 // Auth::routes();
 Route::get('home', 'HomeController@index')->name('home')->middleware('role:barberman|admin');
 Route::get('dashboard', 'HomeController@dashboard')->name('dashboard')->middleware('role:cashier|admin');
-Route::get('unrole', 'HomeController@unrole')->name('unrole');
+Route::get('unrole', 'HomeController@unrole')->name('unrole')->middleware('define_role');
 Route::get('login', 'Auth\\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\\LoginController@login');
 Route::post('logout', 'Auth\\LoginController@logout')->name('logout');;
