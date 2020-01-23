@@ -42,12 +42,14 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dash.css')}}" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-light fixed-top bg-light flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand bg-light col-sm-3 col-md-2 mr-0 b-0" href="#">Leboi.cut</a>
+    <nav class="navbar navbar-light fixed-top bg-white flex-md-nowrap p-0 shadow-sm">
+        <a class="navbar-brand bg-white col-sm-3 col-md-2 mr-0 b-0 text-center" href="#">
+            <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">
+        </a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
@@ -61,17 +63,17 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <nav class="col-md-2 d-none d-md-block bg-white sidebar shadow-sm">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
                                 <span data-feather="home"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link {{request()->is('Orders')?'active': ''}}" href="/orders">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
@@ -85,19 +87,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="users"></span>
-                                Customers
+                                Users
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2"></span>
                                 Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>
-                                Integrations
                             </a>
                         </li>
                     </ul>
