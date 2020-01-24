@@ -42,7 +42,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="{{asset('css/dash.css')}}" rel="stylesheet">
+    <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -102,7 +102,7 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
+                    <h2>Dashboard</h2>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -115,8 +115,6 @@
                     </div>
                 </div>
 
-                <h3>Section title</h3>
-
                 @yield('content')
 
             </main>
@@ -128,7 +126,6 @@
     </script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/feather.min.js')}}"> </script>
-    <script src="{{asset('js/Chart.min.js')}}"></script>
     <script src="{{asset('js/dashboard.js')}}"></script>
 </body>
 
