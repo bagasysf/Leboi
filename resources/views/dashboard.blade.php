@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col">
-        <div class="card" style="width: 21rem;">
+        <div class="card border-0 shadow-sm" style="width: 21rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="col">
-        <div class="card" style="width: 21rem;">
+        <div class="card border-0 shadow-sm" style="width: 21rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="col">
-        <div class="card" style="width: 21rem;">
+        <div class="card border-0 shadow-sm" style="width: 21rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
