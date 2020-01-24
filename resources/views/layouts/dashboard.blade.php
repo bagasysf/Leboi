@@ -73,9 +73,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('Orders')?'active': ''}}" href="/orders">
+                            <a class="nav-link {{request()->is('orders')?'active': ''}}" href="/orders">
                                 <span data-feather="file"></span>
                                 Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{request()->is('packages/category')?'active': ''}}" href="packages/category">
+                                <span data-feather="package"></span>
+                                Packages
                             </a>
                         </li>
                         <li class="nav-item">

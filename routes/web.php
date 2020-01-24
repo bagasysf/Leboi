@@ -40,3 +40,5 @@ Route::post('password/reset', 'Auth\\ResetPasswordController@reset')->name('pass
 Route::get('password/reset/{token}', 'Auth\\ResetPasswordController@showResetForm')->name('password.reset');
 Route::get('register', 'Auth\\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\\RegisterController@register');
+
+Route::get('packages/category', 'CategoriesController@index')->name('category')->middleware('role:admin');
