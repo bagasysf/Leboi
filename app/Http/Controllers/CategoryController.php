@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $title = 'Category Page';
         $categories = Category::all();
-        return view('packages/category', [
+        return view('categories/index', [
             'title' => $title,
             'categories' => $categories,
         ]);

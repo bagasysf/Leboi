@@ -45,7 +45,7 @@
     <link href="{{asset('css/signin.css')}}" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body class="text-center bg-white">
     @yield('content')
 </body>
 

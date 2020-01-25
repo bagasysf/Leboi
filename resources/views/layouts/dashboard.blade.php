@@ -55,8 +55,8 @@
         </a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); 
-                document.getElementById('logout-form').submit();"><span data-feather="log-out"></span> Logout</a>
+                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                document.getElementById('logout-form').submit();">Logout <span data-feather="log-out"></span></a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

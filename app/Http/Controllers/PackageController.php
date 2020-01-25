@@ -55,7 +55,7 @@ class PackageController extends Controller
             'description' => request('description')
         ]);
 
-        return redirect('/package');
+        return redirect('packages');
     }
 
     /**
@@ -75,9 +75,16 @@ class PackageController extends Controller
      * @param  \App\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function edit(Package $package)
+    public function edit($id, Package $package)
     {
-        //
+        $title = 'Packages Page';
+        $header = 'Edit Package';
+        $packages = Package::where('id', $id)->first();
+        return view('packages.edit', [
+            'title' => $title,
+            'header' => $header,
+            'packages' => $packages
+        ]);
     }
 
     /**
@@ -87,9 +94,15 @@ class PackageController extends Controller
      * @param  \App\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Package $package)
+    public function update(Request $request, Package $package, $id)
     {
-        //
+        $packages = Package::where('id', $id)->first();
+        $packages->update([
+            'name' => request('name'),
+            'description' => request('description')
+        ]);
+
+        return redirect('/packages');
     }
 
     /**
@@ -98,8 +111,11 @@ class PackageController extends Controller
      * @param  \App\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Package $package)
+    public function destroy(Package $package, $id)
     {
-        //
+        $packages = Package::where('id', $id)->first();
+        $packages->delete();
+
+        return redirect('/packages');
     }
 }
