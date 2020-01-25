@@ -7,12 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Dashboard Template · Bootstrap</title>
+    <title>@yield('title', 'Leboi Cut')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Font Awesome core CSS -->
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -79,7 +82,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('packages/category')?'active': ''}}" href="packages/category">
+                            <a class="nav-link {{request()->is('packages')?'active': ''}}" href="/packages">
                                 <span data-feather="package"></span>
                                 Packages
                             </a>
@@ -108,7 +111,7 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2>Dashboard</h2>
+                    <h2>@yield('header')</h2>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>

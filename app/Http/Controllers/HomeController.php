@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use app\Http\Kernel;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,17 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $this->middleware('role:barberman|admin');
+        // $this->middleware('role:barberman|admin');
         return view('home');
-    }
-
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
-
-    public function unrole()
-    {
-        return view('unrole');
     }
 }
