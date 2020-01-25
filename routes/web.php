@@ -32,4 +32,5 @@ Route::get('unrole', 'UnroleController@index')->name('unrole')->middleware('defi
 
 Route::get('packages', 'PackageController@index')->name('package')->middleware('role:admin');
 Route::get('packages/create', 'PackageController@create')->name('package.create')->middleware('role:admin');
+Route::post('/packages', 'PackageController@store')->name('package.store')->middleware('role:admin');
 Route::get('packages/category', 'CategoryController@index')->name('category')->middleware('role:admin');

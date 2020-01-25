@@ -47,7 +47,15 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dapetin request dari form
+        // dd(request()->all());
+
+        Package::create([
+            'name' => request('name'),
+            'description' => request('description')
+        ]);
+
+        return redirect('/package');
     }
 
     /**
