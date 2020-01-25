@@ -88,6 +88,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{request()->is('categories')?'active': ''}}" href="/categories">
+                                <span data-feather="file"></span>
+                                Categories
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="shopping-cart"></span>
                                 Products

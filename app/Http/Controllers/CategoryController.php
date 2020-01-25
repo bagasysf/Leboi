@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Package;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,11 +15,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $title = 'Category Page';
-        $categories = Category::all();
+        // $title = 'Category Page';
+        // $header = 'Categories';
+        // $categories = Category::all();
         return view('categories/index', [
-            'title' => $title,
-            'categories' => $categories,
+            // 'title' => $title,
+            // 'header' => $header,
+            // 'categories' => $categories
         ]);
     }
 
@@ -29,7 +32,14 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Categories Page';
+        $header = 'New category';
+        $packages = Package::all();
+        return view('categories/create', [
+            'title' => $title,
+            'header' => $header,
+            'packages' => $packages
+        ]);
     }
 
     /**
@@ -40,7 +50,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dapetin request dari form
+        // dd(request()->all());
+
+        // Category::create([
+        //     'name' => request('name'),
+        //     'description' => request('description')
+        // ]);
+
+        // return redirect('categories');
     }
 
     /**
