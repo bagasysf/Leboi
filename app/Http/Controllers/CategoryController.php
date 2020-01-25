@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Package;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,9 +16,11 @@ class CategoryController extends Controller
     public function index()
     {
         $title = 'Category Page';
+        $header = 'Categories';
         $categories = Category::all();
-        return view('categories/index', [
+        return view('categories.index', [
             'title' => $title,
+            'header' => $header,
             'categories' => $categories,
         ]);
     }
@@ -29,7 +32,14 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Categories Page';
+        $header = 'Add New Category';
+        $packages = Package::all();
+        return view('categories.create', [
+            'title' => $title,
+            'header' => $header,
+            'packages' => $packages
+        ]);
     }
 
     /**
@@ -40,7 +50,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd(request()->all());
+
+        Category::create([
+            'package_id' => request('package_id'),
+            'name' => request('name'),
+            'description' => request('description'),
+        ]);
+
+        return redirect('/categories');
     }
 
     /**
@@ -60,9 +78,18 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $category, $id)
     {
-        //
+        $title = "Categories Page";
+        $header = "Edit Category";
+        $categories = Category::where('id', $id)->first();
+        $packages = Package::all();
+        return view('categories.edit', [
+            'title' => $title,
+            'header' => $header,
+            'categories' => $categories,
+            'packages' => $packages,
+        ]);
     }
 
     /**
@@ -72,9 +99,16 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category, $id)
     {
-        //
+        $categories = Category::where('id', $id)->first();
+        $categories->update([
+            'package_id' => request('package_id'),
+            'name' => request('name'),
+            'description' => request('description'),
+        ]);
+
+        return redirect('/categories');
     }
 
     /**
@@ -83,8 +117,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, $id)
     {
-        //
+        $category = Category::where('id', $id)->first();
+        $category->delete();
+
+        return redirect('/categories');
     }
 }

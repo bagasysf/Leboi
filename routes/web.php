@@ -32,11 +32,16 @@ Route::get('unrole', 'UnroleController@index')->name('unrole')->middleware('defi
 
 Route::get('packages', 'PackageController@index')->name('package')->middleware('role:admin');
 Route::get('packages/create', 'PackageController@create')->name('package.create')->middleware('role:admin');
-Route::post('/packages', 'PackageController@store')->name('package.store')->middleware('role:admin');
+Route::post('packages', 'PackageController@store')->name('package.store')->middleware('role:admin');
 
-Route::get('/packages/{id}/edit', 'PackageController@edit')->name('package.edit')->middleware('role:admin');
-Route::put('/packages/{id}', 'PackageController@update')->name('package.update')->middleware('role:admin');
+Route::get('packages/{id}/edit', 'PackageController@edit')->name('package.edit')->middleware('role:admin');
+Route::put('packages/{id}', 'PackageController@update')->name('package.update')->middleware('role:admin');
 Route::delete('/packages/{id}', 'PackageController@destroy')->name('package.destroy')->middleware('role:admin');
 
 
-Route::get('categories', 'CategoryController@index')->name('category')->middleware('role:admin');
+Route::get('categories/', 'CategoryController@index')->name('category')->middleware('role:admin');
+Route::get('categories/create', 'CategoryController@create')->name('category.create')->middleware('role:admin');
+Route::post('categories', 'CategoryController@store')->name('category.store')->middleware('role:admin');
+Route::get('categories/{id}/edit', 'CategoryController@edit')->name('category.edit')->middleware('role:admin');
+Route::put('categories/{id}', 'CategoryController@update')->name('category.update')->middleware('role:admin');
+Route::delete('categories/{id}', 'CategoryController@destroy')->name('category.destroy')->middleware('role:admin');
