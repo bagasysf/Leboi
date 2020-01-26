@@ -13,9 +13,9 @@
                 <div class="col-lg-12">
                     <div class="form-group pr-3">
                         <div class="row no-gutters d-flex justify-content-center">
-                            <img src="{{asset('images') . '/' . $products->image}}" alt="" style="width: 13rem; height: auto">
+                            <img src="{{asset('images') . '/' . $products->image}}" alt="" class="rounded-circle img-fluid img-thumbnail" style="width: 13rem; height: 13rem;">
                         </div>
-                        <div class="text-center">
+                        <div class="text-center pt-3">
                             <input type="file" name="image">
                         </div>
                     </div>
