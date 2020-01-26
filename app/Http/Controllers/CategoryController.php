@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Package;
+use App\Kernel;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -22,7 +23,7 @@ class CategoryController extends Controller
             'title' => $title,
             'header' => $header,
             'categories' => $categories,
-        ]);
+        ]);;
     }
 
     /**
@@ -33,7 +34,7 @@ class CategoryController extends Controller
     public function create()
     {
         $title = 'Categories Page';
-        $header = 'Add New Category';
+        $header = 'New Category';
         $packages = Package::all();
         return view('categories.create', [
             'title' => $title,
