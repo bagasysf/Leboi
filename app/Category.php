@@ -8,9 +8,8 @@ class Category extends Model
 {
     protected $guarded = [];
 
-    public function category()
+    public function package()
     {
-        //relasi table model ke tabel package
         return $this->belongsTo(Package::class, 'package_id');
     }
 }

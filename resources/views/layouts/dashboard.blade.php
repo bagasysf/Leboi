@@ -94,7 +94,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link" href="#">
+=======
+                            <a class="nav-link {{request()->is('products')?'active': ''}}" href="/products">
+>>>>>>> test-branch
                                 <span data-feather="shopping-cart"></span>
                                 Products
                             </a>

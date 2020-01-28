@@ -9,7 +9,7 @@
         <form action="/packages" method="POST">
             @csrf
             <div class="form-group">
-                <label for="name">Package Name</label>
+                <label for="name">Name</label>
                 <input type="name" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Please fill the name ...">
             </div>
             <div class="form-group">

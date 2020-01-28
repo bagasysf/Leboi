@@ -8,7 +8,7 @@
     <ul class="list-group">
         <li class="list-group-item no-gutters py-3">
             <div class="col">
-                <div class="card border-0 shadow bg-white" style="width: 20rem; height: 10rem">
+                <div class="card border-0 shadow bg-white" style="width: 19rem; height: 10rem">
                     <div class="row no-gutters" style="height: 10rem;">
                         <div class="col-md-4 pl-5 d-flex justify-content-center">
                             <img class="img-fluid text-primary" style="width: 50px; height: auto;" src="{{asset('images/package.svg')}}" class="card-img" alt="...">
@@ -29,7 +29,7 @@
     <ul class="list-group">
         <li class="list-group-item no-gutters border-0 py-3">
             <div class="col">
-                <div class="card border-0 shadow bg-info" style="width: 20rem; height: 10rem;">
+                <div class="card border-0 shadow bg-info" style="width: 19rem; height: 10rem;">
                     <div class="card-body bg-white">
                         <h3 class="text-center pt-4">{{$item->name}}</h3>
                         <div class=" d-flex justify-content-center">
@@ -49,14 +49,5 @@
         </li>
     </ul>
     @endforeach
-
-    <!-- <div class="col py-3">
-        <div class="card border-0 shadow-sm bg-info" style="width: 20rem; height: 10rem;">
-            <div class="card-body">
-                <h5 class="card-title">Add New Package</h5>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div> -->
 </div>
 @endsection
