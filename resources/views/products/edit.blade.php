@@ -15,8 +15,10 @@
                         <div class="row no-gutters d-flex justify-content-center">
                             <img src="{{asset('images') . '/' . $products->image}}" alt="" class="rounded-circle img-fluid img-thumbnail" style="width: 13rem; height: 13rem;">
                         </div>
-                        <div class="text-center pt-3">
-                            <input type="file" name="image">
+                        <div class="text-center pt-4">
+                            <label class="btn btn-outline-dark mb-n1">
+                                Choose File <input type="file" name="image" hidden>
+                            </label>
                         </div>
                     </div>
                 </div>
