@@ -6,11 +6,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-7 px-3 py-3">
-<<<<<<< HEAD
-        <form action="/packages" method="POST">
-=======
         <form action="/categories" method="POST">
->>>>>>> test-branch
             @csrf
             <div class="form-group">
                 <label>Package</label>
@@ -29,15 +25,10 @@
                 <label for="description">Description</label>
                 <textarea name="description" class="form-control" id="description" cols="30" rows="10"></textarea>
             </div>
-<<<<<<< HEAD
-            <button type="submit" class="btn btn-outline-dark">Submit</button>
-            <button type="button" class="btn btn-outline-secondary">Reset</button>
-=======
             <div class="form-group">
                 <button type="submit" class="btn btn-outline-dark">Submit</button>
                 <button type="button" class="btn btn-outline-secondary">Reset</button>
             </div>
->>>>>>> test-branch
         </form>
     </div>
 </div>

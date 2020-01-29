@@ -4,23 +4,14 @@
 @section('header', $header)
 
 @section('content')
-<<<<<<< HEAD
-<h1>Hello World</h1>
-<!-- <div class="row no-gutters">
-    <ul class="list-group">
-        <li class="list-group-item no-gutters py-3">
-            <div class="col">
-                <div class="card border-0 shadow bg-white" style="width: 20rem; height: 10rem">
-=======
 <div class="row no-gutters">
     <ul class="list-group">
         <li class="list-group-item no-gutters py-3">
             <div class="col-3">
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem">
->>>>>>> test-branch
                     <div class="row no-gutters" style="height: 10rem;">
                         <div class="col-md-4 pl-5 d-flex justify-content-center">
-                            <img class="img-fluid text-primary" style="width: 50px; height: auto;" src="{{asset('images/package.svg')}}" class="card-img" alt="...">
+                            <img class="img-fluid text-primary" style="width: 50px; height: auto;" src="{{asset('images/file.svg')}}" class="card-img" alt="...">
                         </div>
                         <div class="col-md-8 d-flex justify-content-center">
                             <div class="card-body d-flex align-items-center text-center">
@@ -34,9 +25,6 @@
             </div>
         </li>
     </ul>
-<<<<<<< HEAD
-</div> -->
-=======
     @foreach($categories as $item)
     <ul class="list-group">
         <li class="list-group-item no-gutters border-0 py-3">
@@ -63,5 +51,4 @@
     </ul>
     @endforeach
 </div>
->>>>>>> test-branch
 @endsection

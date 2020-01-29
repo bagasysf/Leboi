@@ -63,7 +63,7 @@
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem">
                     <div class="row no-gutters" style="height: 10rem;">
                         <div class="col-md-4 pl-5 d-flex justify-content-center">
-                            <img class="img-fluid text-primary" style="width: 50px; height: auto;" src="{{asset('images/package.svg')}}" class="card-img" alt="...">
+                            <img class="img-fluid text-primary" style="width: 50px; height: auto;" src="{{asset('images/shopping-cart.svg')}}" class="card-img" alt="...">
                         </div>
                         <div class="col-md-8 d-flex justify-content-center">
                             <div class="card-body d-flex align-items-center text-center">
@@ -84,10 +84,10 @@
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem;">
                     <div class="bg-white" style="object-fit: cover; overflow: hidden;">
                         <div class="d-flex justify-content-center">
-                            <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 8%">
+                            <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 10%">
                         </div>
                         <div class="card-img-overlay">
-                            <h4 class="text-center pt-3">{{$item->name}}</h4>
+                            <h4 class="text-center">{{$item->name}}</h4>
                             <p class="text-center">{{$item->category->package->name}} | {{$item->category->name}}</p>
                             <div class="d-flex justify-content-center">
                                 <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
