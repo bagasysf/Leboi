@@ -78,7 +78,7 @@
         </li>
     </ul>
     @foreach($products as $item)
-    <ul class="list-group">
+    <ul class="list-group  d-flex justify-content-center">
         <li class="list-group-item no-gutters border-0 py-3">
             <div class="col">
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem;">
@@ -86,19 +86,21 @@
                         <div class="d-flex justify-content-center">
                             <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 10%">
                         </div>
-                        <div class="card-img-overlay">
-                            <h4 class="text-center">{{$item->name}}</h4>
-                            <p class="text-center">{{$item->category->package->name}} | {{$item->category->name}}</p>
-                            <div class="d-flex justify-content-center">
-                                <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
-                                <small><a class="px-2 text-dark" href="products/{{$item->id}}/edit"><i data-feather="edit-2"></i></a></small>
-                                <form action="products/{{$item->id}}" class="p-0" method="POST">
-                                    @csrf
-                                    @method("DELETE")
-                                    <small>
-                                        <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
-                                    </small>
-                                </form>
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <div>
+                                <h4 class="text-center">{{$item->name}}</h4>
+                                <p class="text-center">{{$item->category->package->name}} | {{$item->category->name}}</p>
+                                <div class="d-flex justify-content-center">
+                                    <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
+                                    <small><a class="px-2 text-dark" href="products/{{$item->id}}/edit"><i data-feather="edit-2"></i></a></small>
+                                    <form action="products/{{$item->id}}" class="p-0" method="POST">
+                                        @csrf
+                                        @method("DELETE")
+                                        <small>
+                                            <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
+                                        </small>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -107,5 +109,10 @@
         </li>
     </ul>
     @endforeach
+</div>
+<div class="row no-gutters d-flex justify-content-center">
+    <div class="col-2 d-flex justify-content-center pt-3">
+        {{$products->links()}}
+    </div>
 </div>
 @endsection

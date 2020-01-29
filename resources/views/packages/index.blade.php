@@ -50,4 +50,9 @@
     </ul>
     @endforeach
 </div>
+<div class="row no-gutters d-flex justify-content-center">
+    <div class="col-2 d-flex justify-content-center pt-3">
+        {{$packages->links()}}
+    </div>
+</div>
 @endsection

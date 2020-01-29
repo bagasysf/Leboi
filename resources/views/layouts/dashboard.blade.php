@@ -43,6 +43,10 @@
                 font-size: 3.5rem;
             }
         }
+
+        .page-link {
+            color: black;
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">

@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $title = 'Category Page';
         $header = 'Categories';
-        $categories = Category::all();
+        $categories = Category::paginate(8);
         return view('categories.index', [
             'title' => $title,
             'header' => $header,

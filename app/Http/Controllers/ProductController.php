@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $title = 'Products Page';
         $header = 'Products';
-        $products = Product::all();
+        $products = Product::paginate(8);
         return view('products.index', [
             'title' => $title,
             'header' => $header,

@@ -16,7 +16,7 @@ class PackageController extends Controller
     {
         $title = 'Packages Page';
         $header = 'Packages';
-        $packages = Package::all();
+        $packages = Package::paginate(8);
         return view('packages/index', [
             'title' => $title,
             'header' => $header,
