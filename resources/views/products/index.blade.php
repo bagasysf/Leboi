@@ -78,10 +78,10 @@
         </li>
     </ul>
     @foreach($products as $item)
-    <ul class="list-group d-flex justify-content-center">
+    <ul class="list-group">
         <li class="list-group-item no-gutters border-0 py-3">
             <div class="col">
-                <div class="card border-0 shadow" style="width: 18rem; height: 10rem;">
+                <div class="card border-0 shadow" style="width: 19rem; height: 10rem;">
                     <div class="bg-white" style="object-fit: cover; overflow: hidden;">
                         <div class="d-flex justify-content-center">
                             <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 5%">
