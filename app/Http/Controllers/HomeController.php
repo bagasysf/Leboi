@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use app\Http\Kernel;
 
 use Illuminate\Http\Request;
@@ -26,6 +27,11 @@ class HomeController extends Controller
     public function index()
     {
         // $this->middleware('role:barberman|admin');
-        return view('home');
+        $title = 'Home Page';
+        $categories = Category::all();
+        return view('home/home', [
+            'title' => $title,
+            'categories' => $categories,
+        ]);
     }
 }
