@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use app\Http\Kernel;
 
 use Illuminate\Http\Request;
@@ -29,9 +30,11 @@ class HomeController extends Controller
         // $this->middleware('role:barberman|admin');
         $title = 'Home Page';
         $categories = Category::all();
-        return view('home/home', [
+        $products = Product::where('category_id', 1)->get();
+        return view('home/index', [
             'title' => $title,
             'categories' => $categories,
+            'products' => $products,
         ]);
     }
 }

@@ -12,8 +12,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/leboi.css')}}" rel="stylesheet">
+    <link href="{{asset('css/myleboi.css')}}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+
 
     <!-- Font Awesome core CSS -->
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -49,11 +51,12 @@
             color: black;
         }
     </style>
+
     <!-- Custom styles for this template -->
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-dark">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm mb-n3">
         <div class="container">
             <a class="navbar-brand bg-dark" href="{{ url('/') }}">
@@ -82,8 +85,8 @@
                     </li>
                     @endif
                     @else
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{request()->is('home')?'active': ''}}">
+                        <a href="/home" class="nav-link">
                             <i data-feather="home"></i>
                         </a>
                     </li>
@@ -118,37 +121,14 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-transparent sidebar">
-                <div class="sidebar-sticky d-flex justifycontent-center align-items-center">
-                    @foreach($categories as $item)
-                    <ul class="nav flex-column bg-info border-right" style="width: 10rem">
-                        <li class="nav-item">
-                            <a class="nav-link {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
-                                <span data-feather="home"></span>
-                                {{$item->name}} <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
-                    @enforeach
-                </div>
-            </nav>
+    @yield('content')
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
-
-                @yield('content')
-
-            </main>
-        </div>
-    </div>
-    <script src="{{asset('js/jquery-3.4.1.slim.min.js')}}"></script>
-    <script>
-        window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')
-    </script>
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/jquery-3.2.1.slim.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/feather.min.js')}}"> </script>
     <script src="{{asset('js/dashboard.js')}}"></script>
+    <script src="{{asset('js/myleboi.js')}}"></script>
 </body>
 
 </html>
