@@ -56,11 +56,11 @@
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
 </head>
 
-<body class="bg-dark">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm mb-n3">
+<body class="">
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm">
         <div class="container">
-            <a class="navbar-brand bg-dark" href="{{ url('/') }}">
-                <img src="{{asset('images/leboi-logo-white.png')}}" style="height: 20px; width: auto;" alt="">
+            <a class="navbar-brand bg-transparent" href="{{ url('/') }}">
+                <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
