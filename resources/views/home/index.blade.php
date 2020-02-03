@@ -6,7 +6,7 @@
         <nav class="col-md-2 d-none d-md-block bg-transparent sidebar">
             <div class="d-flex justifycontent-center align-items-center nav-categories">
                 <ul class="nav flex-column bg-warning rounded-right py-3">
-                    <button onclick="openNav()" class="btn text-dark font-weight-bold ml-auto shadow-none">
+                    <button onclick="openNav()" class="btn bg-transparent text-dark font-weight-bold ml-auto shadow-none">
                         <div class="p" style="writing-mode: vertical-rl; text-orientation: mixed;">Categories</div>
                     </button>
                 </ul>
