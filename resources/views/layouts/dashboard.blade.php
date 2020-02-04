@@ -9,10 +9,10 @@
     <meta name="generator" content="Jekyll v3.8.6">
     <title>@yield('title', 'Leboi Cut')</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
-
     <!-- Bootstrap core CSS -->
+    <link href="{{asset('css/myleboi.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <!-- Font Awesome core CSS -->
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
@@ -52,14 +52,14 @@
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-white">
     <nav class="navbar navbar-light fixed-top bg-white flex-md-nowrap p-0 shadow-sm">
         <a class="navbar-brand bg-white col-sm-3 col-md-2 mr-0 b-0 text-center" href="#">
             <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">
         </a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout <span data-feather="log-out"></span></a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -72,45 +72,45 @@
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-white sidebar shadow-sm">
                 <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-column mt-2">
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
-                                <span data-feather="home"></span>
+                            <a class="nav-link d-flex justify-content-start {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
+                                <i data-feather="home"></i>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('orders')?'active': ''}}" href="/orders">
+                            <a class="nav-link d-flex justify-content-start {{request()->is('orders')?'active': ''}}" href="/orders">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('packages')?'active': ''}}" href="/packages">
+                            <a class="nav-link d-flex justify-content-start {{request()->is('packages')?'active': ''}}" href="/packages">
                                 <span data-feather="package"></span>
                                 Packages
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('categories')?'active': ''}}" href="/categories">
+                            <a class="nav-link d-flex justify-content-start {{request()->is('categories')?'active': ''}}" href="/categories">
                                 <span data-feather="file"></span>
                                 Categories
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{request()->is('products')?'active': ''}}" href="/products">
+                            <a class="nav-link d-flex justify-content-start {{request()->is('products')?'active': ''}}" href="/products">
                                 <span data-feather="shopping-cart"></span>
                                 Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link d-flex justify-content-start" href="#">
                                 <span data-feather="users"></span>
                                 Users
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link d-flex justify-content-start" href="#">
                                 <span data-feather="bar-chart-2"></span>
                                 Reports
                             </a>

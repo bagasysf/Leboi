@@ -40,7 +40,7 @@
                                 @csrf
                                 @method("DELETE")
                                 <small>
-                                    <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
+                                    <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i data-feather="trash-2"></i></button>
                                 </small>
                             </form>
                         </div>

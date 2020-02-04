@@ -58,7 +58,7 @@
 </div> -->
 <div class="row no-gutters">
     <ul class="list-group">
-        <li class="list-group-item no-gutters py-3">
+        <li class="list-group-item no-gutters py-3 bg-transparent">
             <div class="col-3">
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem">
                     <div class="row no-gutters" style="height: 10rem;">
@@ -79,7 +79,7 @@
     </ul>
     @foreach($products as $item)
     <ul class="list-group">
-        <li class="list-group-item no-gutters border-0 py-3">
+        <li class="list-group-item no-gutters border-0 py-3 bg-transparent">
             <div class="col">
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem;">
                     <div class="bg-white" style="object-fit: cover; overflow: hidden;">
@@ -97,7 +97,7 @@
                                         @csrf
                                         @method("DELETE")
                                         <small>
-                                            <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
+                                            <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i data-feather="trash-2"></i></button>
                                         </small>
                                     </form>
                                 </div>
