@@ -96,8 +96,8 @@
                                     <form action="products/{{$item->id}}" class="p-0" method="POST">
                                         @csrf
                                         @method("DELETE")
-                                        <small>
-                                            <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
+                                        <small class="mt-n3">
+                                            <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i data-feather="trash-2"></i></button>
                                         </small>
                                     </form>
                                 </div>

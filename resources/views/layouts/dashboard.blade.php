@@ -12,6 +12,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
+    <link href="{{asset('css/myleboi.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('css/app.csnpm0s')}}" rel="stylesheet">--}}
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Font Awesome core CSS -->
@@ -59,7 +61,7 @@
         </a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout <span data-feather="log-out"></span></a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
