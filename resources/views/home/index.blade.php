@@ -29,28 +29,29 @@
 
     </div>
 </div>
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+<div id="carouselExampleCaptions" class="carousel slide">
+    <ol class="carousel-indicatorsphp ">
+        @foreach($products as $item)
+        <li data-target="#carouselExampleCaptions" data-slide-to="{{$loop->index + 1}}" class="@if($loop->first) active @endif"></li>
+        @endforeach
     </ol>
     <div class="carousel-inner">
         @foreach($products as $item)
         <div class="carousel-item @if($loop->first) active @endif">
             <img src="{{asset('images/'.$item->image)}}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{$item->name}}</h5>
-                <p>{{$item->price}}</p>
+                <h1 class="">{{$item->name}}</h1>
+                <h2 class="text-warning pb-2">IDR {{$item->price}}</h2>
+                <a href="" class="btn btn-warning mb-5 font-weight-bold">Add to Cart</a>
             </div>
         </div>
         @endforeach
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <a class="carousel-control-prev ml-5" href="#carouselExampleCaptions" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <a class="carousel-control-next mr-5" href="#carouselExampleCaptions" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>

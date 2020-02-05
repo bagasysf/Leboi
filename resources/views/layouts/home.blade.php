@@ -57,7 +57,7 @@
 </head>
 
 <body class="">
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand bg-transparent" href="{{ url('/') }}">
                 <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">

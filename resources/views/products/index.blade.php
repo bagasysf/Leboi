@@ -84,7 +84,7 @@
                 <div class="card border-0 shadow" style="width: 19rem; height: 10rem;">
                     <div class="bg-white" style="object-fit: cover; overflow: hidden;">
                         <div class="d-flex justify-content-center">
-                            <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 5%">
+                            <img class="card-img mt-n5" src="{{asset('images/'.$item->image)}}" alt="Card image" style="height: auto; width: 19rem; opacity: 15%">
                         </div>
                         <div class="card-img-overlay d-flex align-items-center justify-content-center">
                             <div>
