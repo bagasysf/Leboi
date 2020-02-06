@@ -51,3 +51,5 @@ Route::get('products/create', 'ProductController@create')->name('product.create'
 Route::post('products/', 'ProductController@store')->name('product.store')->middleware('role:cashier|admin');
 Route::get('products/{id}/edit', 'ProductController@edit')->name('product.edit')->middleware('role:cashier|admin');
 Route::put('products/{id}', 'ProductController@update')->name('product.update')->middleware('role:cashier|admin');
+
+Route::post('add-to-cart/{id}', 'CartController')->name('cart');
