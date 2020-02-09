@@ -4,58 +4,6 @@
 @section('header', $header)
 
 @section('content')
-<!-- <div class="row no-gutters">
-    <div class="col-lg-11 py-3 px-3">
-        <div class="card border-0 shadow">
-            <div class="card-body">
-                <div class="row no-gutters">
-                    <div class="col-3">
-                        <a href="products/create" class="pl-2 text-decoration-none text-dark border-0 h6 font-weight-bold">Add New <i data-feather="plus-circle"></i> </a>
-                    </div>
-                </div>
-                <hr>
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Package</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Properties</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($products as $item)
-                        <tr>
-                            <th scope="row">{{$loop->index + 1}}</th>
-                            <td>{{$item->category->package->name}}</td>
-                            <td>{{$item->category->name}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->price}}</td>
-                            <td>{{$item->image}}</td>
-                            <td>
-                                <div class="d-flex justify-content-start ml-n2">
-                                    <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
-                                    <small><a class="px-2 text-dark" href="products/{{$item->id}}/edit"><i data-feather="edit-2"></i></a></small>
-                                    <form action="/products/{{$item->id}}" class="p-0" method="POST">
-                                        @csrf
-                                        @method("DELETE")
-                                        <small>
-                                            <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
-                                        </small>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="row no-gutters">
     <ul class="list-group">
         <li class="list-group-item no-gutters py-3 bg-transparent">

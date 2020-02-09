@@ -9,3 +9,12 @@ function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     // document.getElementById("main").style.marginLeft = "0";
 }
+
+jQuery(window).load(function() {
+
+    /*
+        Stop carousel
+    */
+    $('.carousel').carousel('pause');
+
+});
