@@ -54,4 +54,5 @@ Route::put('products/{id}', 'ProductController@update')->name('product.update')-
 
 Route::post('add-to-cart/{id}', 'CartController')->name('cart');
 
-Route::get('checkout', 'CheckOutController@index')->name('checkout');
+Route::get('checkout/', 'CheckOutController@index')->name('checkout');
+Route::post('checkout/{id}', 'CheckOutController@payment')->name('checkout.payment');

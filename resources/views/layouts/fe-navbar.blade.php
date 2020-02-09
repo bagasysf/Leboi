@@ -16,7 +16,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/checkout" class="nav-link">
+            <a href="/checkout/" class="nav-link">
                 <i data-feather="shopping-cart"></i>
             </a>
         </li>
