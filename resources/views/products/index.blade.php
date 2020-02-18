@@ -5,6 +5,7 @@
 
 @section('content')
 <div class="row no-gutters">
+    @role('admin')
     <ul class="list-group">
         <li class="list-group-item no-gutters py-3 bg-transparent">
             <div class="col-3">
@@ -25,6 +26,7 @@
             </div>
         </li>
     </ul>
+    @endrole
     @foreach($products as $item)
     <ul class="list-group">
         <li class="list-group-item no-gutters border-0 py-3 bg-transparent">
@@ -40,6 +42,7 @@
                                 <p class="text-center">{{$item->category->package->name}} | {{$item->category->name}}</p>
                                 <div class="d-flex justify-content-center">
                                     <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
+                                    @role('admin')
                                     <small><a class="px-2 text-dark" href="products/{{$item->id}}/edit"><i data-feather="edit-2"></i></a></small>
                                     <form action="products/{{$item->id}}" class="p-0" method="POST">
                                         @csrf
@@ -48,6 +51,7 @@
                                             <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i data-feather="trash-2"></i></button>
                                         </small>
                                     </form>
+                                    @endrole
                                 </div>
                             </div>
                         </div>

@@ -21,14 +21,23 @@
                     <td>Rp {{$item->sub_total}}</td>
                     <td>
                         <div class=" d-flex justify-content-center">
-                            <small><a class="px-2 text-dark" href="checkout/{{$item->id}}/edit"><i
-                                        data-feather="edit-2"></i></a></small>
                             <form action="/checkout/{{$item->product_id}}" class="p-0" method="POST">
-                                @csrf
-                                @method("DELETE")
+                            @csrf
+                            @method("DELETE")
+                            <!-- Button trigger modal -->
+{{--                                <small>--}}
+{{--                                    <a type="button" class="px-1 text-dark btn btn-link p-0"--}}
+{{--                                            style="margin-top: -7px;" data-toggle="modal"--}}
+{{--                                            data-target="#exampleModalCenter" href="checkout/{{$item->product_id}}">--}}
+{{--                                        <i data-feather="edit"></i>--}}
+{{--                                    </a>--}}
+{{--                                </small>--}}
+                                {{--                                <small><a class="px-1 text-dark" href="categories/{{$item->id}}/edit"><i--}}
+                                {{--                                            data-feather="edit"></i></a></small>--}}
                                 <small>
-                                    <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i
-                                            data-feather="trash-2"></i></button>
+                                    <button class="px-1 text-dark btn btn-link p-0" style="margin-top: -7px;"
+                                            type="submit"><i
+                                            data-feather="x-square"></i></button>
                                 </small>
                             </form>
                         </div>
@@ -57,4 +66,28 @@
             </form>
         @endif
     </div>
+
+    <!-- Modal -->
+{{--    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"--}}
+{{--         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--        <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--            <div class="modal-content">--}}
+{{--                <div class="modal-header">--}}
+{{--                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Quantity</h5>--}}
+{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                        <span aria-hidden="true">&times;</span>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+{{--                @if($transactionDetails)--}}
+{{--                    <div class="modal-body">--}}
+{{--                        <input type="number" value="{{$transactionDetails->quantity}}" min="0" max="100" step="1"/>--}}
+{{--                    </div>--}}
+{{--                    <div class="modal-footer">--}}
+{{--                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>--}}
+{{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 @endsection

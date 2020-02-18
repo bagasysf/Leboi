@@ -7390,7 +7390,7 @@ function addHandle( attrs, handler ) {
 }
 
 /**
- * Checks document order of two siblings
+ * Checks document orders of two siblings
  * @param {Element} a
  * @param {Element} b
  * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
@@ -7853,7 +7853,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	/* Sorting
 	---------------------------------------------------------------------- */
 
-	// Document order sorting
+	// Document orders sorting
 	sortOrder = hasCompare ?
 	function( a, b ) {
 
@@ -7888,7 +7888,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return 1;
 			}
 
-			// Maintain original order
+			// Maintain original orders
 			return sortInput ?
 				( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
 				0;
@@ -9664,7 +9664,7 @@ jQuery.each( {
 				jQuery.uniqueSort( matched );
 			}
 
-			// Reverse order for parents* and prev-derivatives
+			// Reverse orders for parents* and prev-derivatives
 			if ( rparentsprev.test( name ) ) {
 				matched.reverse();
 			}
@@ -11940,7 +11940,7 @@ function leverageNative( el, type, expectSync ) {
 					event.stopPropagation();
 				}
 
-			// If this is a native event triggered above, everything is now in order
+			// If this is a native event triggered above, everything is now in orders
 			// Fire an inner synthetic event with the original arguments
 			} else if ( saved.length ) {
 
@@ -15736,7 +15736,7 @@ jQuery.extend( {
 		// Extract dataTypes list
 		s.dataTypes = ( s.dataType || "*" ).toLowerCase().match( rnothtmlwhite ) || [ "" ];
 
-		// A cross-domain request is in order when the origin doesn't match the current origin.
+		// A cross-domain request is in orders when the origin doesn't match the current origin.
 		if ( s.crossDomain == null ) {
 			urlAnchor = document.createElement( "a" );
 
@@ -17268,7 +17268,7 @@ return jQuery;
   /** Used to match Latin Unicode letters (excluding mathematical operators). */
   var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 
-  /** Used to ensure capturing order of template delimiters. */
+  /** Used to ensure capturing orders of template delimiters. */
   var reNoMatch = /($^)/;
 
   /** Used to match unescaped characters in compiled string literals. */
@@ -17991,12 +17991,12 @@ return jQuery;
 
   /**
    * The base implementation of `_.sortBy` which uses `comparer` to define the
-   * sort order of `array` and replaces criteria objects with their corresponding
+   * sort orders of `array` and replaces criteria objects with their corresponding
    * values.
    *
    * @private
    * @param {Array} array The array to sort.
-   * @param {Function} comparer The function to define sort order.
+   * @param {Function} comparer The function to define sort orders.
    * @returns {Array} Returns `array`.
    */
   function baseSortBy(array, comparer) {
@@ -20041,7 +20041,7 @@ return jQuery;
 
     /**
      * This function is like `baseFor` except that it iterates over properties
-     * in the opposite order.
+     * in the opposite orders.
      *
      * @private
      * @param {Object} object The object to iterate over.
@@ -21158,7 +21158,7 @@ return jQuery;
     /**
      * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
      * performs a binary search of `array` to determine the index at which `value`
-     * should be inserted into `array` in order to maintain its sort order.
+     * should be inserted into `array` in orders to maintain its sort orders.
      *
      * @private
      * @param {Array} array The sorted array to inspect.
@@ -21651,12 +21651,12 @@ return jQuery;
     }
 
     /**
-     * Compares values to sort them in ascending order.
+     * Compares values to sort them in ascending orders.
      *
      * @private
      * @param {*} value The value to compare.
      * @param {*} other The other value to compare.
-     * @returns {number} Returns the sort order indicator for `value`.
+     * @returns {number} Returns the sort orders indicator for `value`.
      */
     function compareAscending(value, other) {
       if (value !== other) {
@@ -21692,15 +21692,15 @@ return jQuery;
      * Used by `_.orderBy` to compare multiple properties of a value to another
      * and stable sort them.
      *
-     * If `orders` is unspecified, all values are sorted in ascending order. Otherwise,
-     * specify an order of "desc" for descending or "asc" for ascending sort order
+     * If `orders` is unspecified, all values are sorted in ascending orders. Otherwise,
+     * specify an orders of "desc" for descending or "asc" for ascending sort orders
      * of corresponding values.
      *
      * @private
      * @param {Object} object The object to compare.
      * @param {Object} other The other object to compare.
-     * @param {boolean[]|string[]} orders The order to sort by for each property.
-     * @returns {number} Returns the sort order indicator for `object`.
+     * @param {boolean[]|string[]} orders The orders to sort by for each property.
+     * @returns {number} Returns the sort orders indicator for `object`.
      */
     function compareMultiple(object, other, orders) {
       var index = -1,
@@ -23511,8 +23511,8 @@ return jQuery;
      *
      * Merging metadata reduces the number of wrappers used to invoke a function.
      * This is possible because methods like `_.bind`, `_.curry`, and `_.partial`
-     * may be applied regardless of execution order. Methods like `_.ary` and
-     * `_.rearg` modify function arguments, making the order in which they are
+     * may be applied regardless of execution orders. Methods like `_.ary` and
+     * `_.rearg` modify function arguments, making the orders in which they are
      * executed important, preventing the merging of metadata. However, we make
      * an exception for a safe combined case where curried functions have `_.ary`
      * and or `_.rearg` applied.
@@ -23999,7 +23999,7 @@ return jQuery;
     /**
      * Creates an array of `array` values not included in the other given arrays
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. The order and references of result values are
+     * for equality comparisons. The orders and references of result values are
      * determined by the first array.
      *
      * **Note:** Unlike `_.pullAll`, this method returns a new array.
@@ -24026,7 +24026,7 @@ return jQuery;
     /**
      * This method is like `_.difference` except that it accepts `iteratee` which
      * is invoked for each element of `array` and `values` to generate the criterion
-     * by which they're compared. The order and references of result values are
+     * by which they're compared. The orders and references of result values are
      * determined by the first array. The iteratee is invoked with one argument:
      * (value).
      *
@@ -24061,7 +24061,7 @@ return jQuery;
 
     /**
      * This method is like `_.difference` except that it accepts `comparator`
-     * which is invoked to compare elements of `array` to `values`. The order and
+     * which is invoked to compare elements of `array` to `values`. The orders and
      * references of result values are determined by the first array. The comparator
      * is invoked with two arguments: (arrVal, othVal).
      *
@@ -24554,7 +24554,7 @@ return jQuery;
     /**
      * Creates an array of unique values that are included in all given arrays
      * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. The order and references of result values are
+     * for equality comparisons. The orders and references of result values are
      * determined by the first array.
      *
      * @static
@@ -24578,7 +24578,7 @@ return jQuery;
     /**
      * This method is like `_.intersection` except that it accepts `iteratee`
      * which is invoked for each element of each `arrays` to generate the criterion
-     * by which they're compared. The order and references of result values are
+     * by which they're compared. The orders and references of result values are
      * determined by the first array. The iteratee is invoked with one argument:
      * (value).
      *
@@ -24614,7 +24614,7 @@ return jQuery;
 
     /**
      * This method is like `_.intersection` except that it accepts `comparator`
-     * which is invoked to compare elements of `arrays`. The order and references
+     * which is invoked to compare elements of `arrays`. The orders and references
      * of result values are determined by the first array. The comparator is
      * invoked with two arguments: (arrVal, othVal).
      *
@@ -24999,7 +24999,7 @@ return jQuery;
 
     /**
      * Uses a binary search to determine the lowest index at which `value`
-     * should be inserted into `array` in order to maintain its sort order.
+     * should be inserted into `array` in orders to maintain its sort orders.
      *
      * @static
      * @memberOf _
@@ -25076,8 +25076,8 @@ return jQuery;
 
     /**
      * This method is like `_.sortedIndex` except that it returns the highest
-     * index at which `value` should be inserted into `array` in order to
-     * maintain its sort order.
+     * index at which `value` should be inserted into `array` in orders to
+     * maintain its sort orders.
      *
      * @static
      * @memberOf _
@@ -25365,7 +25365,7 @@ return jQuery;
     }
 
     /**
-     * Creates an array of unique values, in order, from all given arrays using
+     * Creates an array of unique values, in orders, from all given arrays using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * for equality comparisons.
      *
@@ -25446,7 +25446,7 @@ return jQuery;
      * Creates a duplicate-free version of an array, using
      * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
      * for equality comparisons, in which only the first occurrence of each element
-     * is kept. The order of result values is determined by the order they occur
+     * is kept. The orders of result values is determined by the orders they occur
      * in the array.
      *
      * @static
@@ -25467,8 +25467,8 @@ return jQuery;
     /**
      * This method is like `_.uniq` except that it accepts `iteratee` which is
      * invoked for each element in `array` to generate the criterion by which
-     * uniqueness is computed. The order of result values is determined by the
-     * order they occur in the array. The iteratee is invoked with one argument:
+     * uniqueness is computed. The orders of result values is determined by the
+     * orders they occur in the array. The iteratee is invoked with one argument:
      * (value).
      *
      * @static
@@ -25493,8 +25493,8 @@ return jQuery;
 
     /**
      * This method is like `_.uniq` except that it accepts `comparator` which
-     * is invoked to compare elements of `array`. The order of result values is
-     * determined by the order they occur in the array.The comparator is invoked
+     * is invoked to compare elements of `array`. The orders of result values is
+     * determined by the orders they occur in the array.The comparator is invoked
      * with two arguments: (arrVal, othVal).
      *
      * @static
@@ -25614,7 +25614,7 @@ return jQuery;
     /**
      * Creates an array of unique values that is the
      * [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
-     * of the given arrays. The order of result values is determined by the order
+     * of the given arrays. The orders of result values is determined by the orders
      * they occur in the arrays.
      *
      * @static
@@ -25636,8 +25636,8 @@ return jQuery;
     /**
      * This method is like `_.xor` except that it accepts `iteratee` which is
      * invoked for each element of each `arrays` to generate the criterion by
-     * which by which they're compared. The order of result values is determined
-     * by the order they occur in the arrays. The iteratee is invoked with one
+     * which by which they're compared. The orders of result values is determined
+     * by the orders they occur in the arrays. The iteratee is invoked with one
      * argument: (value).
      *
      * @static
@@ -25666,8 +25666,8 @@ return jQuery;
 
     /**
      * This method is like `_.xor` except that it accepts `comparator` which is
-     * invoked to compare elements of `arrays`. The order of result values is
-     * determined by the order they occur in the arrays. The comparator is invoked
+     * invoked to compare elements of `arrays`. The orders of result values is
+     * determined by the orders they occur in the arrays. The comparator is invoked
      * with two arguments: (arrVal, othVal).
      *
      * @static
@@ -25816,7 +25816,7 @@ return jQuery;
     /**
      * This method invokes `interceptor` and returns `value`. The interceptor
      * is invoked with one argument; (value). The purpose of this method is to
-     * "tap into" a method chain sequence in order to modify intermediate results.
+     * "tap into" a method chain sequence in orders to modify intermediate results.
      *
      * @static
      * @memberOf _
@@ -26408,7 +26408,7 @@ return jQuery;
      * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+     * // => Logs 'a' then 'b' (iteration orders is not guaranteed).
      */
     function forEach(collection, iteratee) {
       var func = isArray(collection) ? arrayEach : baseEach;
@@ -26442,8 +26442,8 @@ return jQuery;
 
     /**
      * Creates an object composed of keys generated from the results of running
-     * each element of `collection` thru `iteratee`. The order of grouped values
-     * is determined by the order they occur in `collection`. The corresponding
+     * each element of `collection` thru `iteratee`. The orders of grouped values
+     * is determined by the orders they occur in `collection`. The corresponding
      * value of each key is an array of elements responsible for generating the
      * key. The iteratee is invoked with one argument: (value).
      *
@@ -26611,7 +26611,7 @@ return jQuery;
      * // => [16, 64]
      *
      * _.map({ 'a': 4, 'b': 8 }, square);
-     * // => [16, 64] (iteration order is not guaranteed)
+     * // => [16, 64] (iteration orders is not guaranteed)
      *
      * var users = [
      *   { 'user': 'barney' },
@@ -26630,8 +26630,8 @@ return jQuery;
     /**
      * This method is like `_.sortBy` except that it allows specifying the sort
      * orders of the iteratees to sort by. If `orders` is unspecified, all values
-     * are sorted in ascending order. Otherwise, specify an order of "desc" for
-     * descending or "asc" for ascending sort order of corresponding values.
+     * are sorted in ascending orders. Otherwise, specify an orders of "desc" for
+     * descending or "asc" for ascending sort orders of corresponding values.
      *
      * @static
      * @memberOf _
@@ -26652,7 +26652,7 @@ return jQuery;
      *   { 'user': 'barney', 'age': 36 }
      * ];
      *
-     * // Sort by `user` in ascending order and by `age` in descending order.
+     * // Sort by `user` in ascending orders and by `age` in descending orders.
      * _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
      * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
      */
@@ -26745,7 +26745,7 @@ return jQuery;
      *   (result[value] || (result[value] = [])).push(key);
      *   return result;
      * }, {});
-     * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+     * // => { '1': ['a', 'c'], '2': ['b'] } (iteration orders is not guaranteed)
      */
     function reduce(collection, iteratee, accumulator) {
       var func = isArray(collection) ? arrayReduce : baseReduce,
@@ -26971,9 +26971,9 @@ return jQuery;
     }
 
     /**
-     * Creates an array of elements, sorted in ascending order by the results of
+     * Creates an array of elements, sorted in ascending orders by the results of
      * running each element in a collection thru each iteratee. This method
-     * performs a stable sort, that is, it preserves the original sort order of
+     * performs a stable sort, that is, it preserves the original sort orders of
      * equal elements. The iteratees are invoked with one argument: (value).
      *
      * @static
@@ -29932,7 +29932,7 @@ return jQuery;
      * };
      *
      * _.findKey(users, function(o) { return o.age < 40; });
-     * // => 'barney' (iteration order is not guaranteed)
+     * // => 'barney' (iteration orders is not guaranteed)
      *
      * // The `_.matches` iteratee shorthand.
      * _.findKey(users, { 'age': 1, 'active': true });
@@ -29952,7 +29952,7 @@ return jQuery;
 
     /**
      * This method is like `_.findKey` except that it iterates over elements of
-     * a collection in the opposite order.
+     * a collection in the opposite orders.
      *
      * @static
      * @memberOf _
@@ -30015,7 +30015,7 @@ return jQuery;
      * _.forIn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
+     * // => Logs 'a', 'b', then 'c' (iteration orders is not guaranteed).
      */
     function forIn(object, iteratee) {
       return object == null
@@ -30025,7 +30025,7 @@ return jQuery;
 
     /**
      * This method is like `_.forIn` except that it iterates over properties of
-     * `object` in the opposite order.
+     * `object` in the opposite orders.
      *
      * @static
      * @memberOf _
@@ -30081,7 +30081,7 @@ return jQuery;
      * _.forOwn(new Foo, function(value, key) {
      *   console.log(key);
      * });
-     * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+     * // => Logs 'a' then 'b' (iteration orders is not guaranteed).
      */
     function forOwn(object, iteratee) {
       return object && baseForOwn(object, getIteratee(iteratee, 3));
@@ -30089,7 +30089,7 @@ return jQuery;
 
     /**
      * This method is like `_.forOwn` except that it iterates over properties of
-     * `object` in the opposite order.
+     * `object` in the opposite orders.
      *
      * @static
      * @memberOf _
@@ -30371,7 +30371,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.keys(new Foo);
-     * // => ['a', 'b'] (iteration order is not guaranteed)
+     * // => ['a', 'b'] (iteration orders is not guaranteed)
      *
      * _.keys('hi');
      * // => ['0', '1']
@@ -30401,7 +30401,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.keysIn(new Foo);
-     * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+     * // => ['a', 'b', 'c'] (iteration orders is not guaranteed)
      */
     function keysIn(object) {
       return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
@@ -30460,11 +30460,11 @@ return jQuery;
      * };
      *
      * _.mapValues(users, function(o) { return o.age; });
-     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+     * // => { 'fred': 40, 'pebbles': 1 } (iteration orders is not guaranteed)
      *
      * // The `_.property` iteratee shorthand.
      * _.mapValues(users, 'age');
-     * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+     * // => { 'fred': 40, 'pebbles': 1 } (iteration orders is not guaranteed)
      */
     function mapValues(object, iteratee) {
       var result = {};
@@ -30798,7 +30798,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.toPairs(new Foo);
-     * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+     * // => [['a', 1], ['b', 2]] (iteration orders is not guaranteed)
      */
     var toPairs = createToPairs(keys);
 
@@ -30824,7 +30824,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.toPairsIn(new Foo);
-     * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
+     * // => [['a', 1], ['b', 2], ['c', 3]] (iteration orders is not guaranteed)
      */
     var toPairsIn = createToPairs(keysIn);
 
@@ -30993,7 +30993,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.values(new Foo);
-     * // => [1, 2] (iteration order is not guaranteed)
+     * // => [1, 2] (iteration orders is not guaranteed)
      *
      * _.values('hi');
      * // => ['h', 'i']
@@ -31024,7 +31024,7 @@ return jQuery;
      * Foo.prototype.c = 3;
      *
      * _.valuesIn(new Foo);
-     * // => [1, 2, 3] (iteration order is not guaranteed)
+     * // => [1, 2, 3] (iteration orders is not guaranteed)
      */
     function valuesIn(object) {
       return object == null ? [] : baseValues(object, keysIn(object));
@@ -31901,7 +31901,7 @@ return jQuery;
         index = offset + match.length;
 
         // The JS engine embedded in Adobe products needs `match` returned in
-        // order to produce the correct `offset` value.
+        // orders to produce the correct `offset` value.
         return match;
       });
 
@@ -33031,7 +33031,7 @@ return jQuery;
 
     /**
      * This method is like `_.range` except that it populates values in
-     * descending order.
+     * descending orders.
      *
      * @static
      * @memberOf _
@@ -35063,7 +35063,7 @@ function findIndex(arr, prop, value) {
 }
 
 /**
- * Loop trough the list of modifiers and run them in order,
+ * Loop trough the list of modifiers and run them in orders,
  * each of them will then edit the data object.
  * @method
  * @memberof Popper.Utils
@@ -35580,7 +35580,7 @@ function isModifierRequired(modifiers, requestingName, requestedName) {
   if (!isRequired) {
     var _requesting = '`' + requestingName + '`';
     var requested = '`' + requestedName + '`';
-    console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
+    console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in orders to work, be sure to include it before ' + _requesting + '!');
   }
   return isRequired;
 }
@@ -35595,7 +35595,7 @@ function isModifierRequired(modifiers, requestingName, requestedName) {
 function arrow(data, options) {
   var _data$offsets$arrow;
 
-  // arrow depends on keepTogether in order to work
+  // arrow depends on keepTogether in orders to work
   if (!isModifierRequired(data.instance.modifiers, 'arrow', 'keepTogether')) {
     return data;
   }
@@ -36228,7 +36228,7 @@ function inner(data) {
  * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
  * needed by the library.
  *
- * Usually you don't want to override the `order`, `fn` and `onLoad` props.
+ * Usually you don't want to override the `orders`, `fn` and `onLoad` props.
  * All the other properties are configurations that could be tweaked.
  * @namespace modifiers
  */
@@ -36242,7 +36242,7 @@ var modifiers = {
    * @inner
    */
   shift: {
-    /** @prop {number} order=100 - Index used to define the order of execution */
+    /** @prop {number} orders=100 - Index used to define the orders of execution */
     order: 100,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36289,7 +36289,7 @@ var modifiers = {
    * @inner
    */
   offset: {
-    /** @prop {number} order=200 - Index used to define the order of execution */
+    /** @prop {number} orders=200 - Index used to define the orders of execution */
     order: 200,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36313,13 +36313,13 @@ var modifiers = {
    *
    * When `escapeWithReference` is set to`true` and reference is completely
    * outside its boundaries, the popper will overflow (or completely leave)
-   * the boundaries in order to remain attached to the edge of the reference.
+   * the boundaries in orders to remain attached to the edge of the reference.
    *
    * @memberof modifiers
    * @inner
    */
   preventOverflow: {
-    /** @prop {number} order=300 - Index used to define the order of execution */
+    /** @prop {number} orders=300 - Index used to define the orders of execution */
     order: 300,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36356,7 +36356,7 @@ var modifiers = {
    * @inner
    */
   keepTogether: {
-    /** @prop {number} order=400 - Index used to define the order of execution */
+    /** @prop {number} orders=400 - Index used to define the orders of execution */
     order: 400,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36375,7 +36375,7 @@ var modifiers = {
    * @inner
    */
   arrow: {
-    /** @prop {number} order=500 - Index used to define the order of execution */
+    /** @prop {number} orders=500 - Index used to define the orders of execution */
     order: 500,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36389,7 +36389,7 @@ var modifiers = {
    * Modifier used to flip the popper's placement when it starts to overlap its
    * reference element.
    *
-   * Requires the `preventOverflow` modifier before it in order to work.
+   * Requires the `preventOverflow` modifier before it in orders to work.
    *
    * **NOTE:** this modifier will interrupt the current update cycle and will
    * restart it if it detects the need to flip the placement.
@@ -36397,7 +36397,7 @@ var modifiers = {
    * @inner
    */
   flip: {
-    /** @prop {number} order=600 - Index used to define the order of execution */
+    /** @prop {number} orders=600 - Index used to define the orders of execution */
     order: 600,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36448,7 +36448,7 @@ var modifiers = {
    * @inner
    */
   inner: {
-    /** @prop {number} order=700 - Index used to define the order of execution */
+    /** @prop {number} orders=700 - Index used to define the orders of execution */
     order: 700,
     /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
     enabled: false,
@@ -36462,12 +36462,12 @@ var modifiers = {
    * be used to hide with a CSS selector the popper when its reference is
    * out of boundaries.
    *
-   * Requires the `preventOverflow` modifier before it in order to work.
+   * Requires the `preventOverflow` modifier before it in orders to work.
    * @memberof modifiers
    * @inner
    */
   hide: {
-    /** @prop {number} order=800 - Index used to define the order of execution */
+    /** @prop {number} orders=800 - Index used to define the orders of execution */
     order: 800,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36483,7 +36483,7 @@ var modifiers = {
    * so that `applyStyle` modifier can apply it. This separation is useful
    * in case you need to replace `applyStyle` with a custom implementation.
    *
-   * This modifier has `850` as `order` value to maintain backward compatibility
+   * This modifier has `850` as `orders` value to maintain backward compatibility
    * with previous versions of Popper.js. Expect the modifiers ordering method
    * to change in future major versions of the library.
    *
@@ -36491,7 +36491,7 @@ var modifiers = {
    * @inner
    */
   computeStyle: {
-    /** @prop {number} order=850 - Index used to define the order of execution */
+    /** @prop {number} orders=850 - Index used to define the orders of execution */
     order: 850,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36533,7 +36533,7 @@ var modifiers = {
    * @inner
    */
   applyStyle: {
-    /** @prop {number} order=900 - Index used to define the order of execution */
+    /** @prop {number} orders=900 - Index used to define the orders of execution */
     order: 900,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
@@ -36698,13 +36698,13 @@ var Popper = function () {
         name: name
       }, _this.options.modifiers[name]);
     })
-    // sort the modifiers by order
+    // sort the modifiers by orders
     .sort(function (a, b) {
       return a.order - b.order;
     });
 
     // modifiers have the ability to execute arbitrary code when Popper.js get inited
-    // such code is executed in the same order of its modifier
+    // such code is executed in the same orders of its modifier
     // they could add new properties to their options configuration
     // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
     this.modifiers.forEach(function (modifierOptions) {

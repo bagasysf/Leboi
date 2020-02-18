@@ -14,7 +14,7 @@
             </a>
             @foreach($categories as $item)
                 <li class="nav-item">
-                    <a class="nav-link {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
+                    <a class="nav-link {{request()->is('dashboard')?'active': ''}}" href="/home/{{$item->id}}/{{$item->name}}">
                         {{$item->name}}<span class="sr-only">(current)</span>
                     </a>
                 </li>

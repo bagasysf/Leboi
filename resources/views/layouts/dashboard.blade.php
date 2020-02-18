@@ -10,7 +10,7 @@
     <title>@yield('title', 'Leboi Cut')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/myleboi.css')}}" rel="stylesheet">
+    <link href="{{asset('css/leboi.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
@@ -70,54 +70,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-white sidebar shadow-sm">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column mt-2">
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start {{request()->is('dashboard')?'active': ''}}" href="/dashboard">
-                                <i data-feather="home"></i>
-                                Dashboard <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start {{request()->is('orders')?'active': ''}}" href="/orders">
-                                <span data-feather="file"></span>
-                                Orders
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start {{request()->is('packages')?'active': ''}}" href="/packages">
-                                <span data-feather="package"></span>
-                                Packages
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start {{request()->is('categories')?'active': ''}}" href="/categories">
-                                <span data-feather="file"></span>
-                                Categories
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start {{request()->is('products')?'active': ''}}" href="/products">
-                                <span data-feather="shopping-cart"></span>
-                                Products
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start" href="#">
-                                <span data-feather="users"></span>
-                                Users
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex justify-content-start" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            @include('layouts.be-navbar')
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
