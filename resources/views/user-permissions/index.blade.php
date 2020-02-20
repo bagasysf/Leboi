@@ -4,6 +4,11 @@
 @section('header', $header)
 
 @section('content')
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>@yield('header')</h2>
+    </div>
+
     <div class="row no-gutters">
         <div class="col-10">
             <table class="table ">

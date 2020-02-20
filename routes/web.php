@@ -75,3 +75,5 @@ Route::get('user-roles', 'UserRoleController@index')->name('user-roles')->middle
 
 Route::get('user-permissions', 'UserPermissionController@index')->name('user-permissions')->middleware('role:admin');
 
+Route::get('orders/export/', 'TransactionController@export');
+Route::get('users/export/', 'UserController@export');

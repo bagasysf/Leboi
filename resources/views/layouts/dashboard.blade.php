@@ -53,52 +53,39 @@
 </head>
 
 <body class="bg-white">
-    <nav class="navbar navbar-light fixed-top bg-white flex-md-nowrap p-0 shadow-sm">
-        <a class="navbar-brand bg-white col-sm-3 col-md-2 mr-0 b-0 text-center" href="#">
-            <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">
-        </a>
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+<nav class="navbar navbar-light fixed-top bg-white flex-md-nowrap p-0 shadow-sm">
+    <a class="navbar-brand bg-white col-sm-3 col-md-2 mr-0 b-0 text-center" href="#">
+        <img src="{{asset('images/leboi-logo.png')}}" style="height: 20px; width: auto;" alt="">
+    </a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link text-dark px-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Logout <span data-feather="log-out"></span></a>
-            </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </ul>
-    </nav>
+        </li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+    </ul>
+</nav>
 
-    <div class="container-fluid">
-        <div class="row">
-            @include('layouts.be-navbar')
+<div class="container-fluid">
+    <div class="row">
+        @include('layouts.be-navbar')
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h2>@yield('header')</h2>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
-                    </div>
-                </div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-                @yield('content')
+            @yield('content')
 
-            </main>
-        </div>
+        </main>
     </div>
-    <script src="{{asset('js/jquery-3.4.1.slim.min.js')}}"></script>
-    <script>
-        window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')
-    </script>
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('js/feather.min.js')}}"> </script>
-    <script src="{{asset('js/dashboard.js')}}"></script>
+</div>
+<script src="{{asset('js/jquery-3.4.1.slim.min.js')}}"></script>
+<script>
+    window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')
+</script>
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('js/feather.min.js')}}"></script>
+<script src="{{asset('js/dashboard.js')}}"></script>
 </body>
 
 </html>

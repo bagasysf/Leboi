@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TransactionDetailsExport;
+use App\Exports\TransactionsExport;
 use App\TransactionDetail;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TransactionDetailController extends Controller
 {
@@ -81,5 +84,10 @@ class TransactionDetailController extends Controller
     public function destroy(TransactionDetail $transactionDetail)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new TransactionDetailsExport(), 'transactiondetails.xlsx');
     }
 }
