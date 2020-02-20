@@ -12,8 +12,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
-    <link href="{{asset('css/myleboi.css')}}" rel="stylesheet">
-{{--    <link href="{{asset('css/app.csnpm0s')}}" rel="stylesheet">--}}
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Font Awesome core CSS -->

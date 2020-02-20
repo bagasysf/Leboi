@@ -33,14 +33,14 @@
                     <div class="card-body bg-white">
                         <h3 class="text-center pt-2">{{$item->name}}</h3>
                         <p class="text-center">{{$item->package->name}}</p>
-                        <div class="d-flex justify-content-center">
+                        <div class=" d-flex justify-content-center">
                             <small><a class="px-2 text-dark" href=""><i data-feather="eye"></i></a></small>
                             <small><a class="px-2 text-dark" href="categories/{{$item->id}}/edit"><i data-feather="edit-2"></i></a></small>
                             <form action="/categories/{{$item->id}}" class="p-0" method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <small>
-                                    <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i data-feather="trash-2"></i></button>
+                                    <button class="px-2 text-dark btn btn-link p-0 mt-n3" type="submit"><i data-feather="trash-2"></i></button>
                                 </small>
                             </form>
                         </div>
