@@ -25,14 +25,18 @@
                     <th scope="col 2">No</th>
                     <th scope="col 4">Name</th>
                     <th scope="col 2">Email</th>
+                    <th scope="col 2">Role</th>
                 </tr>
                 </thead>
                 <tbody>
                 @forelse($users as $item)
+
+
                     <tr>
                         <th scope="row">{{$loop->index + 1}}</th>
                         <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
+                        <td>{{$item->getRoleNames()->implode($item)}}</td>
                         {{--                        <td>--}}
                         {{--                            <div class=" d-flex justify-content-center mt-1">--}}
                         {{--                                <small><a class="px-2 text-dark" href="orders/{{$item->id}}/view"><i data-feather="dollar-sign"></i></a></small>--}}

@@ -20,7 +20,7 @@ class UserController extends Controller
             'users' => $users,
         ]);
     }
-    
+
     public function export()
     {
         return Excel::download(new UsersExport, 'users.xlsx');
