@@ -52,7 +52,7 @@
             <li class="nav-item">
                 <a class="nav-link d-flex justify-content-start" href="#">
                     <span data-feather="bar-chart-2"></span>
-                    Reports
+                    Sales
                 </a>
             </li>
         </ul>

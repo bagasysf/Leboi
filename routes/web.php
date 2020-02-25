@@ -77,3 +77,4 @@ Route::get('user-permissions', 'UserPermissionController@index')->name('user-per
 
 Route::get('orders/export/', 'TransactionController@export');
 Route::get('users/export/', 'UserController@export');
+

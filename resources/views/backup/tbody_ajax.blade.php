@@ -68,20 +68,19 @@
                             </a>
                         </div>
                     </div>
-                    <form method="GET">
-                        <div class="offset-4 col-6 pr-2">
-                            <div class="input-group mb-3">
-                                <input type="text" name="cari" class="form-control"
-                                       value="{{ old('cari') }}" placeholder="Search here..">
-                                <button type="submit" class="btn btn-outline-secondary"><i
-                                        data-feather="search"></i></button>
-                            </div>
+                    <div class="offset-4 col-6 pr-2">
+                        <div class="input-group mb-3">
+                            <input type="text" name="packageSearch" id="packageSearch" class="form-control"
+                                   value="" placeholder="Typed here..">
+                            @csrf
+                            <button type="button" name="search" id="search" class="btn btn-outline-secondary"><i
+                                    data-feather="search"></i></button>
+
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <thead>
                 <tr>
-                    <th scope="col 2">No</th>
                     <th scope="col 4">Name</th>
                     <th scope="col 2">Description</th>
                     <th scope="col 2">Created At</th>
@@ -89,50 +88,49 @@
                     <th scope="col 2">Custom</th>
                 </tr>
                 </thead>
-                <tbody>
-                @forelse($packages as $item)
-                    <tr>
-                        <th scope="row">{{$loop->index + 1}}</th>
-                        <td>{{$item->name}}</td>
-                        <td>{{$item->description}}</td>
-                        <td>{{$item->created_at}}</td>
-                        <td>{{$item->updated_at}}</td>
-                        <td>
-                            <div class=" d-flex justify-content-start">
-                                @role('admin')
-                                <small><a class="px-2 text-dark" href="packages/{{$item->id}}/edit"><i
-                                            data-feather="edit-2"></i></a></small>
-                                <form action="/packages/{{$item->id}}" class="p-0" method="POST">
-                                    @csrf
-                                    @method("DELETE")
-                                    <small>
-                                        <button class="px-1 text-dark btn btn-link p-0 mtn15" type="submit"><i
-                                                data-feather="trash-2"></i></button>
-                                    </small>
-                                </form>
-                                @endrole
-                            </div>
-                        </td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td>The Data is empty</td>
-                    </tr>
-                @endforelse
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
     </div>
 
-{{--    <br/>--}}
-{{--    Halaman : {{ $packages->currentPage() }} <br/>--}}
-{{--    Jumlah Data : {{ $packages->total() }} <br/>--}}
-{{--    Data Per Halaman : {{ $packages->perPage() }} <br/>--}}
+    <script>
+        $(document).ready(function () {
 
-    <div class="row no-gutters d-flex justify-content-center">
-        <div class="col-2 d-flex justify-content-center pt-3">
-            {{$packages->links()}}
-        </div>
-    </div>
+            load_data('');
 
+            function load_data(packageSearch_query = '') {
+                var _token = $("input[name=_token]").val();
+                $.ajax({
+                    url: "{{ route('package.action') }}",
+                    method: "POST",
+                    data: {packageSearch_query: packageSearch_query, _token: _token},
+                    dataType: "json",
+                    success: function (data) {
+                        var output = '';
+                        if (data.length > 0) {
+                            for (var count = 0; count < data.length; count++) {
+                                output += '<tr>';
+                                output += '<td>' + data[count].name + '</td>';
+                                output += '<td>' + data[count].description + '</td>';
+                                output += '<td>' + data[count].created_at + '</td>';
+                                output += '<td>' + data[count].updated_at + '</td>';
+                                output += '</tr>';
+                            }
+                        } else {
+                            output += '<tr>';
+                            output += '<td colspan="6">No Data Found</td>';
+                            output += '</tr>';
+                        }
+                        $('tbody').html(output);
+                    }
+                });
+            }
+
+            $('#search').click(function () {
+                var packageSearch_query = $('#packageSearch').val();
+                load_data(packageSearch_query);
+            });
+
+        });
+    </script>
 @endsection

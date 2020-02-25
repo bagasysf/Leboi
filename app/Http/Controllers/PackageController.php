@@ -12,11 +12,18 @@ class PackageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $cari = $request->cari;
         $title = 'Packages Page';
         $header = 'Packages';
-        $packages = Package::paginate(8);
+//        $packages = Package::where('name', 'like', "%" . $cari . "%")->paginate(8);
+        $package = Package::query();
+        $columns = ['name', 'description', 'created_at', 'updated_at'];
+        foreach ($columns as $column) {
+            $package->orWhere($column, 'like', '%' . $cari . '%');
+        }
+        $packages = $package->paginate(8);
         return view('packages/index', [
             'title' => $title,
             'header' => $header,
@@ -42,7 +49,7 @@ class PackageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -61,7 +68,7 @@ class PackageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Package  $package
+     * @param \App\Package $package
      * @return \Illuminate\Http\Response
      */
     public function show(Package $package)
@@ -72,7 +79,7 @@ class PackageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Package  $package
+     * @param \App\Package $package
      * @return \Illuminate\Http\Response
      */
     public function edit($id, Package $package)
@@ -90,8 +97,8 @@ class PackageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Package  $package
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Package $package
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Package $package, $id)
@@ -108,7 +115,7 @@ class PackageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Package  $package
+     * @param \App\Package $package
      * @return \Illuminate\Http\Response
      */
     public function destroy(Package $package, $id)
