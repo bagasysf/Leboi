@@ -68,6 +68,7 @@ Route::delete('checkout/{id}', 'CheckOutController@destroy')->name('checkout.des
 Route::get('orders', 'OrderController@index')->name('orders')->middleware('role:cashier|admin');
 Route::get('orders/{id}/view', 'OrderController@view')->name('orders.view')->middleware('role:cashier|admin');
 Route::post('orders/{id}', 'OrderController@payed')->name('orders.payed')->middleware('role:cashier|admin');
+Route::post('orders/{id}/cancel', 'OrderController@cancel')->name('orders.cancel')->middleware('role:cashier|admin');
 
 Route::get('users', 'UserController@index')->name('users')->middleware('role:admin');
 
@@ -77,4 +78,7 @@ Route::get('user-permissions', 'UserPermissionController@index')->name('user-per
 
 Route::get('orders/export/', 'TransactionController@export');
 Route::get('users/export/', 'UserController@export');
+
+Route::get('sales', 'SalesController@index')->name('sales')->middleware('role:admin');
+
 

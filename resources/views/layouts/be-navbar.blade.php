@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link d-flex justify-content-start" href="#">
+                <a class="nav-link d-flex justify-content-start {{request()->is('sales')?'active': ''}}" href="/sales">
                     <span data-feather="bar-chart-2"></span>
                     Sales
                 </a>

@@ -24,7 +24,7 @@ class CategoryController extends Controller
         $columns = ['name', 'description', 'created_at', 'updated_at'];
         foreach ($columns as $column) {
             $category->whereHas('package', function ($query) use ($cari) {
-                $query->where('package_id', 'like' . '%' . $cari . '%')->orWhere('name', 'like', '%' . $cari . '%');
+                $query->where('package_id', 'like' , '%' . $cari . '%')->orWhere('name', 'like', '%' . $cari . '%');
             })->orWhere($column, 'like', '%' . $cari . '%')
                 ->orWhere($column, 'like', '%' . $cari . '%');
         }

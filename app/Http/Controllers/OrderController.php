@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\UsersExport;
-use App\Package;
 use App\Transaction;
 use App\TransactionDetail;
+use App\Kernel;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -16,16 +14,9 @@ class OrderController extends Controller
         $cari = $request->cari;
         $title = 'Order Page';
         $header = 'Orders';
-        $checkout = Transaction::where('status', 'payment')->where('total', 'like', "%" . $cari . "%")->paginate(8);
-//        $packages = Package::where('name', 'like', "%" . $cari . "%")->paginate(8);
-//        $checkouts = Transaction::query();
-//        $columns = ['user_id', 'total', 'status', 'created_at', 'updated_at'];
-//        foreach ($columns as $column) {
-//            $checkout->orWhere($column, 'like', '%' . $cari . '%');
-//        }
-//        $checkouts = $checkout->paginate(8);
+        $checkouts = Transaction::where('status','payment')->where('id_transaction','like','%'.$cari.'%')->paginate(8);
         return view('orders.index', [
-            'checkout' => $checkout,
+            'checkouts' => $checkouts,
             'title' => $title,
             'header' => $header,
         ]);
@@ -49,6 +40,13 @@ class OrderController extends Controller
     {
         // Update status to payment, then cashier take next process
         Transaction::where('id', $id)->update(['status' => 'payed']);
+        return redirect('orders');
+    }
+
+    public function cancel($id)
+    {
+        // Update status to cancel, if something wrong with transactions
+        Transaction::where('id', $id)->update(['status' => 'cancel']);
         return redirect('orders');
     }
 

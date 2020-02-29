@@ -6,6 +6,7 @@ use App\Product;
 use App\Transaction;
 use App\TransactionDetail;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\Cast\Int_;
 
 class CartController extends Controller
 {
@@ -20,6 +21,7 @@ class CartController extends Controller
             $transactions->save();
         } else {
             $transactions = Transaction::create([
+                'id_transaction' => 'LETR'.\Str::random(5),
                 'total' => $products->price,
                 'user_id' => auth()->user()->id,
                 'status' => 'waiting',

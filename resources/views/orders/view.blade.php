@@ -4,8 +4,10 @@
 @section('header', $header)
 
 @section('content')
+    @include('layouts.be-header-without-export')
+
     <div class="row no-gutters">
-        <div class="col-10">
+        <div class="col-12">
             <table class="table ">
                 <thead>
                 <tr>

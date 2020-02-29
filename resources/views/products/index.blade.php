@@ -4,6 +4,8 @@
 @section('header', $header)
 
 @section('content')
+    @include('layouts.be-header-with-export')
+
     <div class="row d-flex justify-content-center no-gutters">
         <div class="col-2 text-start">
             <div class="-flex align-items-center py-2 pr-2">
