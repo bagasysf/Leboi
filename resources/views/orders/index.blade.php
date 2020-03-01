@@ -24,7 +24,7 @@
                 <thead>
                 <tr>
                     <th scope="col 2">No</th>
-                    <th scope="col 2">Order ID</th>
+                    <th scope="col 2">Order Id</th>
                     <th scope="col 4">Barberman</th>
                     <th scope="col 4">Status</th>
                     <th scope="col 2">Total</th>

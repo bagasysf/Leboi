@@ -4,6 +4,8 @@
 @section('header', $header)
 
 @section('content')
+@include('layouts.be-header-without-export')
+
 <div class="row">
     <div class="col-lg-7 px-3 py-3">
         <form action="/packages" method="POST">

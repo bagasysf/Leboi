@@ -19,7 +19,7 @@ class PackageController extends Controller
         $header = 'Packages';
 //        $packages = Package::where('name', 'like', "%" . $cari . "%")->paginate(8);
         $package = Package::query();
-        $columns = ['name', 'description', 'created_at', 'updated_at'];
+        $columns = ['id_package','name', 'description', 'created_at', 'updated_at'];
         foreach ($columns as $column) {
             $package->orWhere($column, 'like', '%' . $cari . '%');
         }
@@ -58,6 +58,7 @@ class PackageController extends Controller
         // dd(request()->all());
 
         Package::create([
+            'id_package' => 'LEPCK'.\Str::random(5),
             'name' => request('name'),
             'description' => request('description')
         ]);

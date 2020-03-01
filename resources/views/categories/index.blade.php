@@ -31,6 +31,7 @@
                 <thead>
                 <tr>
                     <th scope="col 2">No</th>
+                    <th scope="col 2">Category Id</th>
                     <th scope="col 4">Package</th>
                     <th scope="col 4">Name</th>
                     <th scope="col 2">Description</th>
@@ -43,6 +44,7 @@
                 @forelse($categories as $item)
                     <tr>
                         <th scope="row">{{$loop->index + 1}}</th>
+                        <td>{{$item->id_category}}</td>
                         <td>{{$item->package->name}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->description}}</td>

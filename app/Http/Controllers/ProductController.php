@@ -20,9 +20,15 @@ class ProductController extends Controller
         $title = 'Products Page';
         $header = 'Products';
         $product = Product::query();
-        $columns = ['category_id', 'name', 'price', 'image', 'description', 'created_at', 'updated_at'];
+        $columns = ['id_product','category_id', 'name', 'price', 'image', 'description', 'created_at', 'updated_at'];
         foreach ($columns as $column) {
-            $product->orWhere($column, 'like', '%' . $cari . '%');
+            $product->whereHas('category', function ($q) use($cari){
+               $q->whereHas('package',function ($q2) use ($cari){
+                   $q2->where('package_id','like','%'.$cari.'%')->orWhere('name','like','%'.$cari.'%');
+               });
+            })->orWhereHas('category', function ($q3) use ($cari){
+                $q3->where('category_id','like','%'.$cari.'%')->orwhere('name','like','%'.$cari.'%');
+            })->orWhere($column,'like','%'.$cari.'%')->orWhere($column,'like','%'.$cari.'%');
         }
         $products = $product->paginate(6);
         return view('products.index', [
@@ -69,6 +75,7 @@ class ProductController extends Controller
         }
 
         Product::create([
+            'id_product' => 'LEPRD'.\Str::random(5),
             'category_id' => request('category_id'),
             'name' => request('name'),
             'price' => request('price'),
@@ -150,8 +157,11 @@ class ProductController extends Controller
      * @param \App\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product,$id)
     {
-        //
+        $packages = Product::where('id', $id)->first();
+        $packages->delete();
+
+        return redirect('/products');
     }
 }

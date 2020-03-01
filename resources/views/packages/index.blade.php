@@ -31,6 +31,7 @@
                 <thead>
                 <tr>
                     <th scope="col 2">No</th>
+                    <th scope="col 2">Package Id</th>
                     <th scope="col 4">Name</th>
                     <th scope="col 2">Description</th>
                     <th scope="col 2">Created At</th>
@@ -42,6 +43,7 @@
                 @forelse($packages as $item)
                     <tr>
                         <th scope="row">{{$loop->index + 1}}</th>
+                        <td>{{$item->id_package}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->description}}</td>
                         <td>{{$item->created_at}}</td>

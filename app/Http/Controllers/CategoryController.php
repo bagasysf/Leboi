@@ -21,7 +21,7 @@ class CategoryController extends Controller
         $title = 'Category Page';
         $header = 'Categories';
         $category = Category::query();
-        $columns = ['name', 'description', 'created_at', 'updated_at'];
+        $columns = ['id_category','name', 'description', 'created_at', 'updated_at'];
         foreach ($columns as $column) {
             $category->whereHas('package', function ($query) use ($cari) {
                 $query->where('package_id', 'like' , '%' . $cari . '%')->orWhere('name', 'like', '%' . $cari . '%');
@@ -64,6 +64,7 @@ class CategoryController extends Controller
         // dd(request()->all());
 
         Category::create([
+            'id_category' => 'LECTR'.\Str::random(5),
             'package_id' => request('package_id'),
             'name' => request('name'),
             'description' => request('description'),

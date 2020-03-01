@@ -24,6 +24,7 @@
                 <thead>
                 <tr>
                     <th scope="col 2">No</th>
+                    <th scope="col 2">Order ID</th>
                     <th scope="col 4">Barberman</th>
                     <th scope="col 4">Status</th>
                     <th scope="col 2">Total</th>
@@ -35,6 +36,7 @@
                 @forelse($checkout as $item)
                     <tr>
                         <th scope="row">{{$loop->index + 1}}</th>
+                        <td>{{$item->id_transaction}}</td>
                         <td>{{$item->user->name}}</td>
                         <td>{{$item->status}}</td>
                         <td>Rp {{$item->total}}</td>
